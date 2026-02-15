@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPULSE V3 | CLASSIFIED DOCS</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --panel: #0a0a0a;
+            --accent: #00ccff;
+            --text: #e0e0e0;
+            --code-bg: #111;
+            --border: rgba(0, 204, 255, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Courier New', monospace; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR NAVIGATION */
+        .sidebar {
+            width: 250px;
+            background: #020202;
+            border-right: 1px solid var(--border);
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 20px; font-weight: 900; letter-spacing: 2px;
+            color: #fff; margin-bottom: 40px; display: block;
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+
+        .nav-item {
+            display: block; color: #666; text-decoration: none;
+            padding: 10px 0; font-size: 12px; letter-spacing: 1px;
+            transition: 0.3s; border-bottom: 1px solid #111;
+        }
+        .nav-item:hover { color: var(--accent); padding-left: 10px; }
+
+        /* MAIN CONTENT */
+        .content {
+            margin-left: 250px;
+            padding: 50px 80px;
+            max-width: 1000px;
+        }
+
+        h1 { font-size: 40px; color: #fff; margin-bottom: 10px; }
+        h2 { font-size: 24px; color: var(--accent); margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        h3 { font-size: 18px; color: #fff; margin-top: 25px; margin-bottom: 10px; }
+        p { font-size: 14px; line-height: 1.6; color: #bbb; margin-bottom: 15px; }
+        
+        ul { margin-left: 20px; margin-bottom: 20px; }
+        li { font-size: 14px; color: #bbb; margin-bottom: 5px; }
+
+        /* CODE BLOCKS */
+        .code-block {
+            background: var(--code-bg);
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            font-size: 12px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        /* ALERT BOXES */
+        .alert {
+            background: rgba(255, 0, 85, 0.1);
+            border-left: 4px solid #ff0055;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .alert strong { color: #ff0055; }
+
+        .pro-tip {
+            background: rgba(0, 204, 255, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .pro-tip strong { color: var(--accent); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .content { margin-left: 0; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <a href="index.html" class="logo">IMPULSE <span>///</span> V3</a>
+        <a href="#install" class="nav-item">01. INSTALLATION</a>
+        <a href="#debug" class="nav-item">02. REGISTRY FIX</a>
+        <a href="#interface" class="nav-item">03. INTERFACE</a>
+        <a href="#features" class="nav-item">04. MODULES</a>
+        <a href="#shortcuts" class="nav-item">05. SHORTCUTS</a>
+    </nav>
+
+    <div class="content">
+        <h1>SYSTEM DOCUMENTATION</h1>
+        <p>Operational Manual for AEPNKJ IMPULSE V3.0. Read before deployment.</p>
+
+        <h2 id="install">01. INSTALLATION PROTOCOL</h2>
+        <p>Impulse V3 is an unsigned extension. You must install it manually into the Adobe CEP directory.</p>
+        
+        <h3>Windows Path:</h3>
+        <div class="code-block">C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\</div>
+        
+        <h3>Mac OS Path:</h3>
+        <div class="code-block">/Library/Application Support/Adobe/CEP/extensions/</div>
+        
+        <p>1. Extract the downloaded folder.<br>
+        2. Move the entire <strong>com.aepnkj.impulse</strong> folder into the path above.<br>
+        3. Restart Adobe After Effects.</p>
+
+        <h2 id="debug">02. CRITICAL: DEBUG MODE FIX</h2>
+        <div class="alert">
+            <strong>⚠️ SYSTEM ALERT:</strong> If the extension panel is blank or buttons don't work, you must enable "PlayerDebugMode".
+        </div>
+        <p>Since this is a custom tool, Windows requires a registry key to allow it to run.</p>
+
+        <h3>One-Click Fix (Windows):</h3>
+        <p>1. Press <strong>Win + R</strong><br>
+        2. Type <strong>regedit</strong><br>
+        3. Navigate to: <code>HKEY_CURRENT_USER/Software/Adobe/CSXS.11</code> (or your version)<br>
+        4. Right Click > New > String Value<br>
+        5. Name: <strong>PlayerDebugMode</strong> | Value: <strong>1</strong></p>
+
+        <h2 id="interface">03. INTERFACE OVERVIEW</h2>
+        <p>The panel is divided into three strategic sectors:</p>
+        <ul>
+            <li><strong>MAIN:</strong> Core animation tools (Ease, Anchor, Wiggle).</li>
+            <li><strong>TOOLS:</strong> Layer manipulation (Cuts, Duration, Swapper).</li>
+            <li><strong>SYS:</strong> Settings, Visual Themes, and Cache Nuke.</li>
+        </ul>
+
+        <h2 id="features">04. CORE MODULES</h2>
+        
+        <h3>⚡ Speed Influence</h3>
+        <p>Replaces the Graph Editor. Enter your desired Influence % (e.g., 75) and click Apply. The system will auto-detect if your keyframes are Linear and warn you.</p>
+
+        <h3>🔄 Smart Interchange</h3>
+        <p>The crown jewel of V3. Select a layer, click Swap, and choose a new file. Impulse will replace the source but <strong>mathematically calculate</strong> the scale to match the previous layer's visual size exactly.</p>
+
+        <h3>💾 Cache Nuke</h3>
+        <p>Clears RAM and Disk Cache instantly without opening preferences. Use this when After Effects starts lagging.</p>
+
+        <div class="pro-tip">
+            <strong>PRO TIP:</strong> Use the <strong>"Auto-Fit"</strong> module to instantly resize massive images to fit your composition size.
+        </div>
+
+        <h2 id="shortcuts">05. WORKFLOW SHORTCUTS</h2>
+        <p>Impulse supports modifier keys for advanced functionality:</p>
+        <ul>
+            <li><strong>Smart Pre-Comp (Click):</strong> Pre-composes each selected layer individually.</li>
+            <li><strong>Smart Pre-Comp (Shift + Click):</strong> Merges all selected layers into ONE pre-comp.</li>
+            <li><strong>Trim In/Out:</strong> These buttons respect the Playhead (CTI) location accurately.</li>
+        </ul>
+
+        <br><br><br>
+        <p style="text-align: center; font-size: 10px; color: #444;">© 2026 AEPNKJ. SECURE CONNECTION TERMINATED.</p>
+    </div>
+
+</body>
+</html>
